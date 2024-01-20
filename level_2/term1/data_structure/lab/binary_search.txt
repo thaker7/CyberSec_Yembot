@@ -1,0 +1,86 @@
+// Omer Khalid Bawazir
+// Cyber Security ( Level 2 )
+
+#include <Windows.h>
+#include <iostream>
+using namespace std;
+
+void Display(int Array[], int size) // طباعة المصفوفة
+{
+    cout << " The Array =--> { ";
+    for (int i = 0; i < size; i++)
+        cout << Array[i] << " ";
+
+    cout << "} \n\n";
+}
+
+void Sort_Ascending(int Array[], int size) // ترتيب المصفوفة تصاعديا
+{
+    int temp;
+    for (int i = 0; i < size; i++)
+    {
+        for (int j = i + 1; j < size; j++)
+        {
+            if (Array[i] > Array[j])
+            {
+                temp = Array[j];
+                Array[j] = Array[i];
+                Array[i] = temp;
+            }
+        }
+    }
+    Display(Array, size);
+}
+
+int Binary_Search(int Array[], int size, int key) // البحث عن عنصر بداية من وسط المصفوفة
+{
+    int left = 0;         // index 0
+    int right = size - 1; // index 9
+
+    while (left <= right)
+    {
+        int mid = left + (right - left) / 2;
+
+        if (key == Array[mid]) // اذا كان العنصر المستهدف يساوي العنصر الموجود في وسط المصفوفة
+            return mid;
+
+        if (key > Array[mid]) // اذا كان العنصر المستهدف أكبر من العنصر الموجود في وسط المصفوفة
+            left = mid + 1;
+
+        else // اذا كان العنصر المستهدف أصغر من العنصر الموجود في وسط المصفوفة
+            right = mid - 1;
+    }
+    return -1; // اذا لم يتم العثور على العنصر
+}
+
+int main()
+{
+    cout << "\t ------------------------- Binary Search ------------------------- \n\n";
+
+    int Array[] = {20, 0, 50, 70, 10, 30, 90, 100, 80, 60, 40};
+    int size = sizeof(Array) / sizeof(Array[0]);
+    Display(Array, size);
+
+    int key;
+    cout << " Enter Any Number to Search for in The Array : ";
+    cin >> key;
+
+    Sort_Ascending(Array, size);
+
+    int result = Binary_Search(Array, size, key);
+    if (result != -1)
+    {
+        cout << " The Element " << key << " Found in The Array \n\n";
+        system("color 0A"); // اللون الأخضر
+    }
+    else // (result == -1)
+    {
+        cout << " !! The Element " << key << " Not Found in The Array !! \n\n";
+        system("color 04"); // اللون الأحمر
+    }
+
+    return 0;
+}
+
+// Omer Khalid Bawazir
+// Cyber Security ( Level 2 )
