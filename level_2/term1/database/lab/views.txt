@@ -1,0 +1,8 @@
+CREATE VIEW mobiles_apple AS
+SELECT * FROM production.products WHERE brand_id = 1;
+SELECT * FROM mobiles_apple
+
+
+CREATE VIEW products_info AS
+SELECT product_id, product_name FROM production.products;
+SELECT * FROM products_info

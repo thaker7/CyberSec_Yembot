@@ -1,0 +1,3 @@
+UPDATE mobiles_apple SET price = 500
+
+UPDATE mobiles_apple SET price = 1000 WHERE brand_id = 1

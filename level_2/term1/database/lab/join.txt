@@ -1,0 +1,18 @@
+/*
+CREATE DATABASE HRD;
+USE HRD;
+CREATE SCHEMA hr;
+
+CREATE TABLE hr.employees (employeeId int PRIMARY KEY IDENTITY, employeeName VARCHAR(100) NOT NULL);
+CREATE TABLE hr.candidates (candidateId int PRIMARY KEY IDENTITY, candidateName VARCHAR(100) NOT NULL);
+
+INSERT INTO hr.employees(employeeName) VALUES ('omer bawazir'), ('ali abduallah'), ('salim ali'), ('adnan');
+INSERT INTO hr.candidates(candidateName) VALUES ('omer bawazir'), ('saeed mansoor'), ('asamah khalid'), ('adnan');
+*/
+SELECT employeeId, employeeName, candidateId, candidateName FROM hr.candidates INNER JOIN hr.employees ON employeeName = candidateName;
+
+SELECT employeeId, employeeName, candidateId, candidateName FROM hr.candidates LEFT JOIN hr.employees ON employeeName = candidateName;
+SELECT employeeId, employeeName, candidateId, candidateName FROM hr.candidates LEFT JOIN hr.employees ON employeeName = candidateName WHERE employeeId IS NULL;
+
+SELECT employeeId, employeeName, candidateId, candidateName FROM hr.candidates RIGHT JOIN hr.employees ON employeeName = candidateName;
+SELECT employeeId, employeeName, candidateId, candidateName FROM hr.candidates RIGHT JOIN hr.employees ON employeeName = candidateName WHERE candidateId IS NULL;
