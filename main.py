@@ -19,8 +19,9 @@ def calling(call):
     call_level2(call)
 
 keep_alive()
+
 try:
-    bot.infinity_polling(skip_pending=True)
+    bot.infinity_polling()
 except ValueError:
     print("")
 
