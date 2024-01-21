@@ -3,12 +3,12 @@ from threading import Thread
 
 app = Flask('')
 
-@app.route('/')
+@app.route('/https://cybersec-yembot.onrender.com')
 def home():
-    return "<b> hell Cyber Security</b>"
+    return "<b> hello</b>"
 
 def run():
-    app.run(host='0.0.0.0', port=3001)
+    app.run()
 
 def keep_alive():
     t = Thread(target=run)
