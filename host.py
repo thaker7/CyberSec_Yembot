@@ -1,23 +1,15 @@
-from info import *
 from flask import Flask, request
 from threading import Thread
-import telebot
 
-app = Flask(__name__)
+app = Flask('')
 
-# عملية الربط مع الويبهوك
-@app.route('/6758499492:AAG-E9c1uDgXwAMgXGVH-aWpUDjfYG-spvw', methods=['POST'])
-def respond():
-    update = telebot.types.Update.de_json(request.stream.read().decode("utf-8"))
-    bot.process_new_updates([update])
-    return "OK"
+@app.route('/')
+def home():
+    return "<b> hello</b>"
 
-# تعيين عنوان الويبهوك
-def set_webhook():
-    bot.remove_webhook()
-    bot.set_webhook(url="https://cybersec-yembot.onrender.com/6758499492:AAG-E9c1uDgXwAMgXGVH-aWpUDjfYG-spvw")  # استبدل هذا بعنوان الويبهوك الخاص بك
+def run():
+    app.run(host='0.0.0.0', port=5000)
 
-if __name__ == "__main__":
-    set_webhook()  # تعيين الويبهوك عند تشغيل التطبيق
-    app.run()
-    
+def keep_alive():
+    t = Thread(target=run)
+    t.start()
