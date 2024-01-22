@@ -20,6 +20,6 @@ def calling(call):
 
 keep_alive()
 try:
-    bot.polling()
+    bot.infinity_polling(skip_pending=True)
 except ValueError:
     print("")
