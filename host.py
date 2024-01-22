@@ -14,12 +14,14 @@ def webhook():
     return 'OK', 200
 
 def run():
-    bot.remove_webhook()
-    bot.set_webhook(url=WEBHOOK_URL)
+    app.run()
 
 def keep_alive():
     t = Thread(target=run)
     t.start()
 
 if __name__ == '__main__':
-    app.run(port=80)
+    bot.remove_webhook()     # حذف الويبهوك
+    bot.set_webhook(url=WEBHOOK_URL)  # تعيين الويبهوك
+    keep_alive()
+    
