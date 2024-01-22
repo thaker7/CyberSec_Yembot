@@ -4,7 +4,7 @@ from threading import Thread
 import telebot
 
 TOKEN = TOKEN_BOT
-WEBHOOK_URL = "https://cybersec-yembot.onrender.com/"
+WEBHOOK_URL = "https://cybersec-yembot.onrender.com"
 app = Flask('')
 
 @app.route('/', methods=['POST'])
@@ -21,7 +21,10 @@ def keep_alive():
     t.start()
 
 if __name__ == '__main__':
-    bot.remove_webhook()     # حذف الويبهوك
+    bot.remove_webhook()     # حذف الويبهوك الحالي
     bot.set_webhook(url=WEBHOOK_URL)  # تعيين الويبهوك
-    keep_alive()
-    
+    keep_alive()             # تشغيل الاستطلاع
+    try:
+        bot.infinity_polling()
+    except ValueError:
+        print("")

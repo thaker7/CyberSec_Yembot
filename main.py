@@ -7,10 +7,12 @@ from host import keep_alive
 @bot.message_handler(commands=['start'])
 def send_welcome(msg):
     bot.reply_to(msg, "🛡 مرحبا بك " + msg.chat.first_name + ' ' + msg.chat.last_name + " في قناة الأمن السيبراني\n\nالقناة تحوي كل محاضرات تخصص الأمن السيبراني\n\n- ارسل كلمة [قائمه] لعرض كل المواد 👍\n- ارسل [اسم الماده] مباشرة 👍")
+
 # -------------------- الردود --------------------
 @bot.message_handler(func=lambda msg : True)
 def reply_message(msg):
     reply_func(msg)
+
 # -------------------- ازرار شفافه --------------------
 @bot.callback_query_handler(func=lambda call : True)
 def calling(call):
@@ -18,7 +20,5 @@ def calling(call):
     call_level1(call)
     call_level2(call)
 
-try:
+if __name__ == '__main__':
     bot.infinity_polling()
-except ValueError:
-    print("")
