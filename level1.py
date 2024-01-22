@@ -121,7 +121,7 @@ def call_level1(call):
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     elif call.data == "english_2":
         bot.send_message(call.message.chat.id, "جاري ارسال محاضرات مادة (اللغة الأنجليزية (2))، يرجى الأنتظار !")
-        bot.send_document(call.message.chat.id, open(f"level_1/term2/englich_2/interchange_Level1_student_book.pdf", "rb"))
+        bot.send_document(call.message.chat.id, open("level_1/term2/englich_2/interchange_Level1_student_book.pdf", "rb"))
 # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     elif call.data == "cyber_security":
         bot.send_message(call.message.chat.id, "جاري ارسال محاضرات مادة (أساسيات الأمن السيبراني)، يرجى الأنتظار !")

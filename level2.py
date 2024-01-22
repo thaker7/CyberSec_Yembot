@@ -38,7 +38,7 @@ def call_level2(call):
     elif call.data == "web_design_lectures_en":
         bot.send_message(call.message.chat.id, "جاري ارسال المحاضرات (English)، يرجى الأنتظار !")
         for i in range(1, 5):
-            bot.send_document(call.message.chat.id, open("term1/web_design/see/web_"+str(i)+"_(html).pdf", "rb"))
+            bot.send_document(call.message.chat.id, open(f"term1/web_design/see/web_{i}_(html).pdf", "rb"))
         bot.send_document(call.message.chat.id, open("level_2/term1/web_design/see/web_5_(css).pdf", "rb"))
         bot.send_document(call.message.chat.id, open("level_2/term1/web_design/see/web_6_(css).pdf", "rb"))
         bot.send_document(call.message.chat.id, open("level_2/term1/web_design/see/web_7_(js).pdf", "rb"))
@@ -48,7 +48,7 @@ def call_level2(call):
     elif call.data == "web_design_lectures_ar":
         bot.send_message(call.message.chat.id, "جاري ارسال التلاخيص، يرجى الأنتظار !")
         for i in range(1, 9):
-            bot.send_document(call.message.chat.id, open("level_2/term1/web_design/see/my_lectures/lecture_"+str(i)+".txt", "rb"))
+            bot.send_document(call.message.chat.id, open(f"level_2/term1/web_design/see/my_lectures/lecture_{i}.txt", "rb"))
 
         # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     elif call.data == "web_design_lab":
@@ -62,12 +62,12 @@ def call_level2(call):
     elif call.data == "web_design_lab_html":
         bot.send_message(call.message.chat.id, "جاري ارسال محاضرات HTML عملي، يرجى الأنتظار !")
         for i in range(1, 7):
-            bot.send_document(call.message.chat.id, open("level_2/term1/web_design/lab/html_"+str(i)+".pdf", "rb"))
+            bot.send_document(call.message.chat.id, open(f"level_2/term1/web_design/lab/html_{i}.pdf", "rb"))
 
     elif call.data == "web_design_lab_css":
         bot.send_message(call.message.chat.id, "جاري ارسال محاضرات CSS عملي، يرجى الأنتظار !")
         for i in range(1, 6):
-            bot.send_document(call.message.chat.id, open("level_2/term1/web_design/lab/css_"+str(i)+".pdf", "rb"))
+            bot.send_document(call.message.chat.id, open(f"level_2/term1/web_design/lab/css_{i}.pdf", "rb"))
 
 # ----------------------------------------------------------------------------------------------------------------------
     elif call.data == "networks1":
@@ -89,12 +89,12 @@ def call_level2(call):
     elif call.data == "networks1_lectures_en":
         bot.send_message(call.message.chat.id, "جاري ارسال محاضرات الشبكات (English)، يرجى الأنتظار !")
         for i in range(1, 9):
-            bot.send_document(call.message.chat.id, open("level_2/term1/Networks/see/network_"+str(i)+".pdf", "rb"))
+            bot.send_document(call.message.chat.id, open(f"level_2/term1/Networks/see/network_{i}.pdf", "rb"))
 
     elif call.data == "networks1_lectures_ar":
         bot.send_message(call.message.chat.id, "جاري ارسال التلاخيص، يرجى الأنتظار !")
         for i in range(1, 9):
-            bot.send_document(call.message.chat.id, open("level_2/term1/Networks/see/my_lectures/lecture_"+str(i)+".txt", "rb"))
+            bot.send_document(call.message.chat.id, open(f"level_2/term1/Networks/see/my_lectures/lecture_{i}.txt", "rb"))
         # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     elif call.data == "networks1_lab":
         bot.send_message(call.message.chat.id, "لم يتم أضافة محاضرات العملي بعد !")
@@ -119,12 +119,12 @@ def call_level2(call):
     elif call.data == "c++_ds_lectures_en":
         bot.send_message(call.message.chat.id, "جاري ارسال محاضرات ++C نظري (English)، يرجى الأنتظار !")
         for i in range(1, 9):
-            bot.send_document(call.message.chat.id, open("level_2/term1/data_structure/see/c++_"+str(i)+".pptx", "rb"))
+            bot.send_document(call.message.chat.id, open(f"level_2/term1/data_structure/see/c++_{i}.pptx", "rb"))
 
     elif call.data == "c++_ds_lectures_ar":
         bot.send_message(call.message.chat.id, "جاري ارسال التلاخيص، يرجى الأنتظار !")
         for i in range(1, 9):
-            bot.send_document(call.message.chat.id, open("level_2/term1/data_structure/see/my_lectures/lecture_"+str(i)+".txt", "rb"))
+            bot.send_document(call.message.chat.id, open(f"level_2/term1/data_structure/see/my_lectures/lecture_{i}.txt", "rb"))
         # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     elif call.data == "c++_ds_lab":
         bot.send_message(call.message.chat.id, "جاري ارسال تلاخيص ++C عملي، يرجى الأنتظار !")
@@ -153,12 +153,12 @@ def call_level2(call):
     elif call.data == "java_oop_lectures_en":
         bot.send_message(call.message.chat.id, "جاري ارسال محاضرات JAVA نظري (English)، يرجى الأنتظار !")
         for i in range(1, 7):
-            bot.send_document(call.message.chat.id, open("level_2/term1/java_oop/see/java_"+str(i)+".pptx", "rb"))
+            bot.send_document(call.message.chat.id, open(f"level_2/term1/java_oop/see/java_{i}.pptx", "rb"))
 
     elif call.data == "java_oop_lectures_ar":
         bot.send_message(call.message.chat.id, "جاري ارسال التلاخيص، يرجى الأنتظار !")
         for i in range(1, 7):
-            bot.send_document(call.message.chat.id, open("level_2/term1/java_oop/see/my_lectures/lecture_"+str(i)+".txt", "rb"))
+            bot.send_document(call.message.chat.id, open(f"level_2/term1/java_oop/see/my_lectures/lecture_{i}.txt", "rb"))
         # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     elif call.data == "java_oop_lab":
         bot.send_message(call.message.chat.id, "جاري ارسال المحاضرات العملي، يرجى الأنتظار !")
@@ -187,7 +187,7 @@ def call_level2(call):
     elif call.data == "database1_lectures_en":
         bot.send_message(call.message.chat.id, "جاري ارسال محاضرات قواعد البيانات نظري (English)، يرجى الأنتظار !")
         for i in range(1, 8):
-            bot.send_document(call.message.chat.id, open("level_2/term1/database/see/ch"+str(i)+".ppt", "rb"))
+            bot.send_document(call.message.chat.id, open(f"level_2/term1/database/see/ch{i}.ppt", "rb"))
         bot.send_document(call.message.chat.id, open("level_2/term1/database/see/create_new_table.pdf", "rb"))
         bot.send_document(call.message.chat.id, open("level_2/term1/database/see/views.pdf", "rb"))
         bot.send_document(call.message.chat.id, open("level_2/term1/database/see/joins.pdf", "rb"))
@@ -195,7 +195,7 @@ def call_level2(call):
     elif call.data == "database1_lectures_ar":
         bot.send_message(call.message.chat.id, "جاري ارسال التلاخيص، يرجى الأنتظار !")
         for i in range(1, 8):
-            bot.send_document(call.message.chat.id, open("level_2/term1/database/see/my_lectures/lecture_"+str(i)+".txt", "rb"))
+            bot.send_document(call.message.chat.id, open(f"level_2/term1/database/see/my_lectures/lecture_{i}.txt", "rb"))
         bot.send_document(call.message.chat.id, open("level_2/term1/database/see/my_lectures/lecture_join.txt", "rb"))
         # ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     elif call.data == "database1_lab":
@@ -219,7 +219,7 @@ def call_level2(call):
     elif call.data == "linear_algebra_lectures":
         bot.send_message(call.message.chat.id, "جاري ارسال محاضرات الجبر الخطي، يرجى الأنتظار !")
         for i in range(1, 7):
-            bot.send_document(call.message.chat.id, open("level_2/term1/linear_algebra/lecture_"+str(i)+".pdf", "rb"))
+            bot.send_document(call.message.chat.id, open(f"level_2/term1/linear_algebra/lecture_{i}.pdf", "rb"))
 
 # ------------------------------------------------------------------------------------------------------------------
     elif call.data == "discrete_structures":
@@ -232,7 +232,7 @@ def call_level2(call):
     elif call.data == "discrete_structures_lectures":
         bot.send_message(call.message.chat.id, "جاري ارسال محاضرات الهياكل المتقطعه، يرجى الأنتظار !")
         for i in range(1, 10):
-            bot.send_document(call.message.chat.id, open("level_2/term1/discrete_structures/lecture_"+str(i)+".pdf", "rb"))
+            bot.send_document(call.message.chat.id, open(f"level_2/term1/discrete_structures/lecture_{i}.pdf", "rb"))
 
 # ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 # ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
