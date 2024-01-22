@@ -3,28 +3,21 @@ from flask import Flask, request
 from threading import Thread
 import telebot
 
-TOKEN = TOKEN_BOT
-WEBHOOK_URL = "https://cybersec-yembot.onrender.com"
-app = Flask('')
+app = Flask(__name__)
 
-@app.route('/', methods=['POST'])
-def webhook():
-    update = telebot.types.Update.de_json(request.stream.read().decode('utf-8'))
+# عملية الربط مع الويبهوك
+@app.route('/6758499492:AAG-E9c1uDgXwAMgXGVH-aWpUDjfYG-spvw', methods=['POST'])
+def respond():
+    update = telebot.types.Update.de_json(request.stream.read().decode("utf-8"))
     bot.process_new_updates([update])
-    return 'OK', 200
+    return "OK"
 
-def run():
+# تعيين عنوان الويبهوك
+def set_webhook():
+    bot.remove_webhook()
+    bot.set_webhook(url="https://cybersec-yembot.onrender.com/6758499492:AAG-E9c1uDgXwAMgXGVH-aWpUDjfYG-spvw")  # استبدل هذا بعنوان الويبهوك الخاص بك
+
+if __name__ == "__main__":
+    set_webhook()  # تعيين الويبهوك عند تشغيل التطبيق
     app.run()
-
-def keep_alive():
-    t = Thread(target=run)
-    t.start()
-
-if __name__ == '__main__':
-    bot.remove_webhook()     # حذف الويبهوك الحالي
-    bot.set_webhook(url=WEBHOOK_URL)  # تعيين الويبهوك
-    keep_alive()             # تشغيل الاستطلاع
-    try:
-        bot.infinity_polling()
-    except ValueError:
-        print("")
+    
