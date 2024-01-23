@@ -1,7 +1,20 @@
 from reply import *
 from level1 import *
 from level2 import *
-from host import keep_alive
+from flask import Flask, request
+
+secret = 'ioufbvewgr2492yf2gh'
+url = 'https://cybersec-yembot.onrender.com' + secret
+
+bot.remove_webhook()
+bot.set_webhook(url)
+app = Flask(__name__)
+
+@app.route('/'+secret, methods=['POST'])
+def webhook():
+    update = telebot.types.Update.de_json(request.stream.read().decode('utf-8'))
+    bot.process_new_updates([update])
+    return 'ok', 200
 
 # -------------------- الأوامر --------------------
 @bot.message_handler(commands=['start'])
@@ -19,6 +32,3 @@ def calling(call):
     call_plan(call)
     call_level1(call)
     call_level2(call)
-
-keep_alive()
-bot.infinity_polling()
