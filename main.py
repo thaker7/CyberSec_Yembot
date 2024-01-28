@@ -19,4 +19,4 @@ def calling(call):
     call_level2(call)
 
 keep_alive()
-bot.polling()
+bot.infinity_polling()
